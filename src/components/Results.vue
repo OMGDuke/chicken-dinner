@@ -1,11 +1,12 @@
 <template>
-  <div>
-    <div v-show="!loading && playerFound" class="center-align">
+  <div class="center-align">
+    <div v-show="!loading && playerFound" >
       <h1>RESULTS</h1>
       <h3><img id="player-avatar" :src="playerAvatar"> {{playerName}}</h3>
       <h5>{{wins}} Chicken Dinners</h5>
-      <div>
-        <img id="chicken-image" src="https://www.pressurecookerpros.com/wp-content/uploads/2016/03/Chicken-Dinner.jpg?x64511">
+      <div >
+        <img v-show="wins > 0" v-for="n in wins" id="chicken-image" src="https://www.pressurecookerpros.com/wp-content/uploads/2016/03/Chicken-Dinner.jpg?x64511">
+        <img v-show="wins === 0" class="responsive-img" src="http://www.furrytips.com/wp-content/uploads/2015/09/can-cats-eat-chicken-bones.png">
       </div>
     </div>
     <div v-show="!loading && !playerFound">
@@ -82,6 +83,6 @@ export default {
 
 <style scoped>
     img#chicken-image {
-    width: 60%;
+    width: 10%;
   }  
 </style>
