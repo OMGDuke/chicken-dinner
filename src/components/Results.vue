@@ -64,7 +64,6 @@ export default {
       this.loading = false;
       if (!playerData.body.error) {
         this.playerAvatar = playerData.body.Avatar;
-        console.log(this.playerAvatar);
         this.playerFound = true;
         this.wins = 0;
         playerData.body.Stats.forEach((league) => {
